@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오 버튼과 이미지 출력</title>
+</head>
+<body>
+    <h2>라디오 버튼을 클릭하면 이미지를 출력합니다.</h2><hr>
+    <div>
+        <input type="radio" name="fruit" id="banana" checked onchange="imgChange(this)"><label for="banana">바나나</label>
+        <input type="radio" name="fruit" id="mango" onchange="imgChange(this)"><label for="mango">망고</label>
+        <input type="radio" name="fruit" id="apple" onchange="imgChange(this)"><label for="apple">사과</label>
+    </div>
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.J713t6KgpMa6j5dXb9AiXQHaHa%26pid%3DApi&f=1" alt="" id="fruitImg">
+</body>
+<script>
+    let fruitImg = document.getElementById('fruitImg')
+    function imgChange(fruit){
+        if(fruit.id == "banana"){
+            fruitImg.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.J713t6KgpMa6j5dXb9AiXQHaHa%26pid%3DApi&f=1"
+        }else if(fruit.id == "mango"){
+            fruitImg.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.aNQRg8iG5GHVTR4_LIJKkAHaE8%26pid%3DApi&f=1"
+        }else if(fruit.id == "apple"){
+            fruitImg.src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.wps901F1UP9sQisl6LiEmwHaFj%26pid%3DApi&f=1"
+        }
+    }
+</script>
+</html>

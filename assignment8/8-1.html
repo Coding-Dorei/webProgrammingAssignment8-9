@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visibility 프로퍼티</title>
+</head>
+<body>
+    <h2 style="display: inline;">다음 빈 곳에 숨은 단어?</h2><button onclick="ToggleVisibility()">show/hide</button><hr>
+    <ul>
+        <li>I (<span style="visibility: hidden; color:blue;">love</span>) you.</li>
+        <li>CSS is Cascading (<span style="visibility: hidden; color:blue;">Style</span>) Sheet.</li>
+        <li>응답하라 (<span style="visibility: hidden; color:blue;">1988</span>).</li>
+    </ul>
+</body>
+<script>
+    let spans = document.getElementsByTagName('span')
+    function ToggleVisibility(){
+        for(s of spans){
+            style = window.getComputedStyle(s)
+            v = style.getPropertyValue('visibility')
+            if(v == 'hidden'){
+                s.style.visibility = 'visible'
+            }else{
+                s.style.visibility = 'hidden'
+            }
+            
+        }
+    }
+</script>
+</html>

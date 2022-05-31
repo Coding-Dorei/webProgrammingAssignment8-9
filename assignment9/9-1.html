@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onmouseover와 onmouseout</title>
+    <style>
+        div{
+            position: absolute;
+            display: inline;
+            width: 200px;
+            height: 40px;
+            visibility:hidden;
+            border-style: solid;
+            border-width: 1px;
+            border-color: yellowgreen;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>아이템에 마우스를 올리면 설명 출력</h2><hr>
+    웹프로그래밍
+    <ul>
+        <li onmouseover="show_desc(this,event)" onmouseout="remove_desc(this)">HTML</li>
+        <li onmouseover="show_desc(this,event)" onmouseout="remove_desc(this)">CSS</li>
+        <li onmouseover="show_desc(this,event)" onmouseout="remove_desc(this)">JavaScript</li>
+    </ul>
+    <div id="desc"></div>
+</body>
+<script>
+    let div = document.getElementById("desc")
+    function show_desc(target,event){
+        if(target.innerHTML==="HTML")div.innerHTML="웹 문서의 뼈대 작성"
+        else if(target.innerHTML === "CSS") div.innerHTML="웹 문서를 꾸미는 역할"
+        else if(target.innerHTML === "JavaScript") div.innerHTML="사용자 동작에 반응"
+        div.style.visibility = 'visible'
+        div.style.left = event.clientX + "px"
+        div.style.top = event.clientY + 'px'
+    }
+    function remove_desc(target){
+        if(target.innerHTML==="HTML")div.innerHTML="웹 문서의 뼈대 작성"
+        else if(target.innerHTML === "CSS") div.innerHTML="웹 문서를 꾸미는 역할"
+        else if(target.innerHTML === "JavaScript") div.innerHTML="사용자 동작에 반응"
+        div.style.visibility = 'hidden'
+    }
+</script>
+</html>

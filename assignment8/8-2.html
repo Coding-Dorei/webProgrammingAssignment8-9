@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라면을 끓이는 순서</title>
+</head>
+<body>
+    <h2>라면을 끓이는 순서</h2><hr>
+    <ol style="list-style-type:upper-alpha; background-color: yellowgreen;" onclick="addlist(this)">
+        <li>물을 끓인다</li>
+    </ol>
+</body>
+<script>
+    function addlist(target){
+        recipe = prompt("라면을 끓이는 순서를 입력하라")
+        target.innerHTML += `<li>${recipe}</li>`
+    }
+</script>
+</html>
